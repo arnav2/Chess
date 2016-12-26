@@ -13,6 +13,7 @@
 
 #include <cstdlib>
 #include <string>
+#include "Square.h"
 #include "ChessPieces.h"
 #include "Pawn.h"
 #include "bishop.h"
@@ -29,12 +30,24 @@ using namespace std;
 int initialBoard();
 
 int main(int argc, char** argv) {
+    Square square[8][8];
+    for (int i=0; i<8;i++){
+        for (int j=0; j<8;j++){
+            //setting the color of the board 
+            if ((i+j)%2==0)
+                square[i][j].setcolour('w');
+            else 
+                square[i][j].setcolour('b');
+        }
+    }
     
     return 0;
 }
 
 int initialBoard(){
     //Construct the initial board
+    
+
     king wKing('w');
     queen wQueen('w');
     rook wRookleft('w');
@@ -43,11 +56,16 @@ int initialBoard(){
     bishop wBishopright('w');
     knight wKnightleft('w');
     knight wKnightright('w');
-    //For pawn I have to call it 8 times. 
-    Pawn wPawn[8];
     
-    //Similarly for black 
+    //For pawn I have to call it 8 times. 
+    
+    Pawn wPawn[8];
     Pawn bPawn[8];
+    
+    for (int i=0 ; i< 8 ; i++){
+        wPawn[i].setColour('w');
+        bPawn[i].setColour('b');
+    }
     
     king bKing('b');
     queen bQueen('b');
@@ -57,5 +75,7 @@ int initialBoard(){
     bishop bBishopright('b');
     knight bKnightleft('b');
     knight bKnightright('b');
+    //Set the initial position now ! 
+    
     
 }

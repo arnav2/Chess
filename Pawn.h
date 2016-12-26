@@ -18,6 +18,8 @@
 class Pawn: public ChessPieces {
 public:
     Pawn();
+    char getColour(){return colour;}
+    void setColour(char _colour){colour=_colour;}
     Pawn(const Pawn& orig);
     bool ValidMove(int srcrow,int srccol, int dstrow , int dstcol);
     virtual ~Pawn();

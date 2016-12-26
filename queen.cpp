@@ -14,6 +14,7 @@
 #include "queen.h"
 
 queen::queen(char _colour) {
+    colour= _colour;
 }
 
 queen::queen(const queen& orig) {

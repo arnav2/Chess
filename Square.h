@@ -14,6 +14,8 @@
 #ifndef SQUARE_H
 #define SQUARE_H
 #include "ChessPieces.h"
+#include <iostream>
+using namespace std; 
 class Square {
 private:
     char colour; 
@@ -23,22 +25,23 @@ private:
     ChessPieces storePiece; 
 public:
     Square();
+    
     //setters
-    void setcolour(char _colour);
-    void setsquarecol(int _squarecol);
-    void setsquarerow(char _squarerow);
-    void sethasPiece(bool _hasPiece);
-    void setstorePiece(ChessPieces _storePiece);
+    void setcolour(char _colour){colour=_colour;}
+    void setsquarecol(int _squarecol){squarecol=_squarecol;}
+    void setsquarerow(char _squarerow){squarerow=_squarerow;}
+    void sethasPiece(bool _hasPiece){hasPiece=_hasPiece;}
+    void setstorePiece(ChessPieces _storePiece){storePiece=_storePiece;}
     //Getters 
-    char& getcolour();
-    int& getsquarecol();
-    char& getsquarerow();
-    bool& gethasPiece();
-    ChessPieces& getstorePiece();
+    char& getcolour(){return colour;}
+    int& getsquarecol(){return squarecol;}
+    char& getsquarerow(){return squarerow;}
+    bool& gethasPiece(){return hasPiece;}
+    ChessPieces& getstorePiece(){return storePiece;}
     
     Square(const Square& orig);
     //Print function 
-    void print(); 
+    void print(){cout<<storePiece;} 
     
     virtual ~Square();
     

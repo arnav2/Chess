@@ -14,7 +14,7 @@
 #include "Pawn.h"
 
 Pawn::Pawn() {
-
+    
 }
 
 Pawn::Pawn(const Pawn& orig) {

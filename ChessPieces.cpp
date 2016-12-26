@@ -21,4 +21,7 @@ ChessPieces::ChessPieces(const ChessPieces& orig) {
 
 ChessPieces::~ChessPieces() {
 }
-
+ostream& operator<< (ostream& os,const ChessPieces& rhs){
+    os<< rhs.state; 
+    return(os); 
+}

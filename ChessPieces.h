@@ -17,17 +17,18 @@
 #include <string>
 using namespace std;
 
-class ChessPieces {
-    private:
+class ChessPieces {    
+    protected:
         string state;
         int posrow; 
-        int poscol; 
+        int poscol;
+        char colour; 
     public:
         ChessPieces();
         ChessPieces(const ChessPieces& orig);
         //virtual bool ValidMove(int srcrow,int srccol, int dstrow , int dstcol);
         virtual ~ChessPieces();
- 
+        friend ostream& operator<< (ostream& os,const ChessPieces& rhs); 
 
 };
 
