@@ -1,1 +1,2 @@
-# chess-This hopefully will be a chess game 
+# Chess
+Hopefully will be a chess game in C++ with a graphics library.  
