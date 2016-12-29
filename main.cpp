@@ -21,6 +21,7 @@
 #include "queen.h"
 #include "rook.h"
 #include "knight.h"
+
 using namespace std;
 
 /*
@@ -38,6 +39,11 @@ int main(int argc, char** argv) {
                 square[i][j].setcolour('w');
             else 
                 square[i][j].setcolour('b');
+        }
+    }
+    for (int i=0; i<8;i++){
+        for (int j=0; j<8;j++){
+            square[i][j].makerect();
         }
     }
     

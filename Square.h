@@ -39,6 +39,7 @@ public:
     bool& gethasPiece(){return hasPiece;}
     ChessPieces& getstorePiece(){return storePiece;}
     
+    void makerect();
     Square(const Square& orig);
     //Print function 
     void print(){cout<<storePiece;} 
