@@ -5,7 +5,7 @@ using namespace std;
 #include "easygl.h"
 #include "graphics.h"
 #include "ShapeArray.h"
-
+#include "Background.h"
 
 easygl *easygl::object_ptr = NULL;
 
@@ -69,6 +69,19 @@ void easygl::gl_event_loop (ShapeArray* _shapeArray,
    gl_set_window_message ("Not checking for events; window will not respond.\n");
 }
 
+void easygl::gl_event_loop (Background* _background,
+        bool enable_mouse_move_input, bool enable_keypress_input)
+{
+  
+   backGround = _background;  // Store for callbacks.
+   set_mouse_move_input (enable_mouse_move_input);
+   set_keypress_input (enable_keypress_input);
+   gl_set_window_message ("Window active: (1) click on a shape, then (2) click to move its center");
+   event_loop (act_on_mouse_button, act_on_mouse_move, act_on_keypress, drawscreen);
+   gl_set_window_message ("Not checking for events; window will not respond.\n");
+}
+
+
 
 void easygl::gl_flush () {
    flushinput ();
@@ -80,6 +93,8 @@ void easygl::gl_flush () {
 void easygl::drawscreen (void) {
    easygl* window = easygl::get_object_ptr();
    ShapeArray* shapeArrayPtr = window->shapeArray;
+   //Background* backgroundPtr = window->backGround;
+   //backgroundPtr->reDraw();
    shapeArrayPtr->reDraw ();
 }
 

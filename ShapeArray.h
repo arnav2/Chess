@@ -54,7 +54,7 @@ public:
    void printAll (stringstream& linestream);
    void computeArea (stringstream& linestream);
    void computePerimeter (stringstream& linestream);
-   void handleDraw(stringstream& linestream);
+   void handleDraw();
    
    // Function that redraws all the graphics; used in callbacks after a 
    // window events.

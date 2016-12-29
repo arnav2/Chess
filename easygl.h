@@ -5,7 +5,7 @@
 using namespace std;
 
 class ShapeArray;   
-
+class Background;
 
 class easygl 
 {
@@ -18,7 +18,7 @@ private:
    // Store a pointer to a shapeArray object, so callbacks can get at the
    // data and functions they need to draw everything.
    ShapeArray* shapeArray;
-                                  
+   Background* backGround;                               
 public:
 
    // ************ Window initialization, closedown and event handling **************
@@ -46,6 +46,7 @@ public:
    // (default:  neither type of input results in a callback).
    // Note:  the callbacks are defined below.
    void gl_event_loop (ShapeArray *_shapeArray, bool enable_mouse_move_input = false, bool enable_keypress_input = false);
+   void gl_event_loop (Background *_background, bool enable_mouse_move_input = false, bool enable_keypress_input = false);
 
    // Sets the text that will be displayed in a subwindow at the bottom of the main window.
    void gl_set_window_message (const char *message);

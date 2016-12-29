@@ -21,31 +21,76 @@
 #include "queen.h"
 #include "rook.h"
 #include "knight.h"
+#include "Rectangle.h"
 
+#include <iostream>
+#include <cstdio>
+#include <string>
+#include "Shape.h"
+#include "ShapeArray.h"
+#include "Triangle.h"
+#include "Circle.h"
+#include "Rectangle.h"
+#include "Polygon.h"
+#include "Background.h"
 using namespace std;
-
+const int width = 200; 
+const int height= 200;  
 /*
  * 
  */
 //This should return an initial board with a graphics library 
 int initialBoard();
 
+string itoa(int value, int base) {
+
+		string buf;
+
+		// check that the base if valid
+		if (base < 2 || base > 16) return buf;
+
+		enum { kMaxDigits = 35 };
+		buf.reserve( kMaxDigits ); // Pre-allocate enough space.
+
+
+		int quotient = value;
+
+		// Translating number to string with base:
+		do {
+			buf += "0123456789abcdef"[ abs( quotient % base ) ];
+			quotient /= base;
+		} while ( quotient );
+
+		// Append the negative sign
+		if ( value < 0) buf += '-';
+
+		buf.assign( buf.rbegin(), buf.rend());
+		return buf;
+	}
 int main(int argc, char** argv) {
-    Square square[8][8];
-    for (int i=0; i<8;i++){
-        for (int j=0; j<8;j++){
-            //setting the color of the board 
-            if ((i+j)%2==0)
-                square[i][j].setcolour('w');
-            else 
-                square[i][j].setcolour('b');
+    ShapeArray shapes; 
+    Rectangle*** rect= new Rectangle**[8];
+    for (int i=0;i<8;i++){
+        rect[i] =new Rectangle*[8];
+    }
+    //Rectangle(string _name, string _color, int sqaurecol, char squarerow, float _xcen, float _ycen, float width, float height);
+    for (int i = 0; i < 8; i++) {
+        for (int j = 0; j < 8; j++){
+            string row=itoa(i,10);
+            string col=itoa(j,10);
+            if ((i+j)%2==0){
+                rect[i][j]=new Rectangle(row+col,"black",j,i,j*width+width/2,i*height+height/2,width, height);
+                shapes.addShape(rect[i][j]);
+            }
+            else {
+                rect[i][j]=new Rectangle(row+col,"white",j,i,j*width+width/2,i*height+height/2,width, height);
+                shapes.addShape(rect[i][j]);
+            }
         }
     }
-    for (int i=0; i<8;i++){
-        for (int j=0; j<8;j++){
-            square[i][j].makerect();
-        }
-    }
+    
+    shapes.handleDraw();
+    
     
     return 0;
 }
@@ -85,3 +130,4 @@ int initialBoard(){
     
     
 }
+

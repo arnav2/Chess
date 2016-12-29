@@ -1,8 +1,8 @@
 /* 
  * File:   ShapeArray.cpp
- * Author: vaughn
  *
- * Created on November 20, 2012, 2:14 PM
+ * Created on November 20, 2012, 2:14 PM * Author: vaughn
+
  */
 
 #include <iostream>
@@ -185,12 +185,12 @@ void ShapeArray::computePerimeter (stringstream& linestream) {
 }
 
 
-void ShapeArray::handleDraw(stringstream& linestream) {
+void ShapeArray::handleDraw() {
    
    
    // Create the graphics window, if it doesn't exist already.
    if (window == NULL)
-      window = new easygl ("Shape class program", WHITE);
+      window = new easygl ("Shape class program", RED);
    
    selectedShape = NULL;  // Nothing clicked on
    

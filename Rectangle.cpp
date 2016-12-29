@@ -11,7 +11,7 @@
 #include <cmath>
 using namespace std;
 //Constructors 
-Rectangle :: Rectangle (string _name, string _colour, float _xcen, float _ycen, float _width,float _height)
+Rectangle :: Rectangle (string _name, string _colour, int _sqaurecol, char _squarerow, float _xcen, float _ycen, float _width, float _height)
         :Shape(_name,_colour,_xcen,_ycen){
     width=_width;
     height=_height;
