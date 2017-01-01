@@ -14,6 +14,9 @@
 #ifndef KING_H
 #define KING_H
 #include "ChessPieces.h"
+#include <iostream>
+
+
 class king:public ChessPieces {
 public:
     king(char _colour);
@@ -21,7 +24,7 @@ public:
     bool ValidMove(int srcrow,int srccol, int dstrow , int dstcol);
     virtual ~king();
 private:
-
+    t_point vertice[20];
 };
 
 #endif /* KING_H */

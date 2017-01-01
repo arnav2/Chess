@@ -69,6 +69,7 @@ string itoa(int value, int base) {
 	}
 int main(int argc, char** argv) {
     ShapeArray shapes; 
+    king wKing('w');
     Rectangle*** rect= new Rectangle**[8];
     for (int i=0;i<8;i++){
         rect[i] =new Rectangle*[8];
