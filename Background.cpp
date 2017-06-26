@@ -1,10 +1,3 @@
-/* 
- * File:   Background.cpp
- *
- * Created on November 20, 2012, 2:14 PM * Author: vaughn
-
- */
-
 #include <iostream>
 #include <string>
 #include <sstream>
