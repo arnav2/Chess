@@ -1,9 +1,4 @@
-/* 
- * File:   Background.h
- * Author: vaughn
- *
- * Created on November 20, 2012, 2:41 PM
- */
+
 
 #ifndef Background_H
 #define	Background_H
